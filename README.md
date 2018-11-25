@@ -1,4 +1,4 @@
-# firebase-ionic-starter
+# Firebase-Ionic Starter
 
 Node 6.14.4
 Ionic CLI 3.20.0
