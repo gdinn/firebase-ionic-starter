@@ -1,0 +1,46 @@
+<!--
+  Generated template for the SignUpInPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign up/in</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="usr.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input type="text" [(ngModel)]="usr.password"></ion-input>
+    </ion-item>    
+    <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ng-container *ngIf="!authenticated">
+              <ion-col>
+                <button (click)="signIn()" block ion-button>Login</button>
+              </ion-col>
+            </ng-container>
+            <ion-col>
+              <button (click)="signUp()" block ion-button>
+                Register
+                <ng-container *ngIf="authenticated">
+                  another account
+                </ng-container>
+              </button>              
+            </ion-col>            
+          </ion-row>        
+        </ion-grid>
+      </ion-item>        
+  </ion-list>
+</ion-content>

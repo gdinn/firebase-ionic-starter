@@ -1,15 +1,17 @@
 
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class HelloWorldService {
-  authState: any = null;
+	authState: any = null;
 
  	constructor(
- 		private afAuth: AngularFireAuth
+		 private afAuth: AngularFireAuth,
+		 private db: AngularFireDatabase
  	) {
  		this.afAuth.authState.subscribe((auth) => {
  			this.authState = auth
@@ -29,11 +31,20 @@ export class HelloWorldService {
  		return Observable.fromPromise(this.afAuth.auth.createUserWithEmailAndPassword(email, password));
  	}
 
-  signOut(): void {
-    this.afAuth.auth.signOut();
+  signOut() {
+		return Observable.fromPromise(this.afAuth.auth.signOut());
   }
 
   get authenticated(): boolean {
     return this.authState !== null;
-  }  
+	}
+
+	getData(){
+		return Observable.fromPromise(this.db.database.ref('teste').once('value'));
+	}
+
+	sendData(data: any){
+		return Observable.fromPromise(this.db.database.ref('teste').push(data));
+	}
+	
  }

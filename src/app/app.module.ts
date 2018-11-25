@@ -5,23 +5,30 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { HelloWorldService } from '../services/hello-world.service';
+
+import { firebaseConfig } from '../environment/firebase.config';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+		AngularFireModule.initializeApp(firebaseConfig),
+		AngularFireDatabaseModule,
+		AngularFireAuthModule,    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
   ],
   providers: [
+    HelloWorldService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
