@@ -38,3 +38,5 @@ npm install angularfire2 --save
 On the day of this tutorial I am using angularfire2@5.1.0 and firebase@5.5.9
 
 To start doing the acess interface I suggest create a folder called services under the src folder. Then, create a file called hello-world.service.ts. In this file you'll find all the methods used to register an user, login and save some data.
+
+The implementation of theses methods can bee seen on the referred file.
