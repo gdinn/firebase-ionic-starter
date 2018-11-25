@@ -1,8 +1,19 @@
 # Firebase-Ionic Starter
 
+To install ionic:
+npm install -g ionic@3.20.0
+
+To install node:
+curl -sL https://deb.nodesource.com/setup_6.x | bash -
+apt-get install -y nodejs
+
+At the end of these two command you should have:
 Node 6.14.4
 Ionic CLI 3.20.0
 
+That can be verified with:
+node -v
+ionic
 
 First step is to create a folder called "Environment" inside the src folder created by Ionic. Inside this folder you will find the file "firebase.config.ts", which contains all the data required by firebase.
 
