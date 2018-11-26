@@ -1,5 +1,7 @@
 # Firebase-Ionic Starter
 
+The goal here is to make a simple application with ionic that comunicates with firebase and do simple tasks that envolves data exchange focusing on the firebase utilization. To assure the same results Its important to use the same node and ionic cli that I am using, which is 3.20.0 for ionic and 6.14.4 for node.
+
 To install ionic:
 ```
 npm install -g ionic@3.20.0
@@ -12,10 +14,6 @@ curl -sL https://deb.nodesource.com/setup_6.x | bash -
 ```
 apt-get install -y nodejs
 ```
-
-At the end of these two command you should have:
-Node 6.14.4
-Ionic CLI 3.20.0
 
 That can be verified with:
 ```
